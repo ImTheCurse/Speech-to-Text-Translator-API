@@ -5,8 +5,8 @@ from ibm_watson import LanguageTranslatorV3
 import urllib.request
 
 #                   speech to text authenticator
-url_s2t = "https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/0851cc8b-75a1-4463-b814-3e2ae43f69a7"
-iam_apikey_s2t = "5ofKNDxKXeuZ6PUH3c0le6HnDChCf8qIR1mFY1WWB06s"
+url_s2t = {"Instance URL"}
+iam_apikey_s2t = {"APIKey"}
 s2t_authenticator = IAMAuthenticator(iam_apikey_s2t)
 speech_to_text = SpeechToTextV1(
     authenticator=s2t_authenticator
@@ -20,8 +20,8 @@ with open(filename[0],mode="rb") as wav:
      res_filltered = res['results'][0]['alternatives'][0]['transcript']
 
     #                translator Authenticator
-api_key_lt = 'jrZslO2zBTYpjbz9DeVjejNcV1OCdsJp2XwGkb4Tm8Qt'
-api_url_lt = 'https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/060f7456-7ee1-4d82-bace-b852715d49ee'
+api_key_lt = {'APIKey'}
+api_url_lt = {'instance URL'}
 model_id = 'en-es'
 lt_authenticator = IAMAuthenticator(api_key_lt)
 language_translator = LanguageTranslatorV3(
